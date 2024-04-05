@@ -44,6 +44,12 @@ nav a:hover{
 
 .social-link img {
 	width: 20px;
+	height: 20px;
+}
+
+.carousel-inner{
+	width: 100%;
+	height: auto;
 }
 
 #about {
@@ -74,7 +80,7 @@ nav a:hover{
 }
 
 .picture img {
-
+	height: auto;
 	width: 100%;
 
 }
@@ -280,6 +286,7 @@ input[type="submit"] {
 	}
 	.picture {
 		width: 50%;
+
 	}
 	.picture.left::before {
 		width: 100%;
