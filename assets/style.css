@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap");
 body {
 	max-width: 1920px;
 	margin: auto;
@@ -101,7 +102,7 @@ h2 {
 }
 
 #gallery {
-	/*	min-height: 100vh; */
+	min-height: 100vh;
 }
 #gallery h2, #services h2{
 	text-align: center;
@@ -365,4 +366,3 @@ input[type="submit"] {
 		width: 80%;
 	}
 }
-
