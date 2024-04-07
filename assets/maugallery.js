@@ -68,10 +68,7 @@
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {
       if (
-        !element
-          .children()
-          .first()
-          .hasClass("row")
+        !element.children().first().hasClass("row")
       ) {
         element.append('<div class="gallery-items-row row"></div>');
       }
@@ -114,9 +111,7 @@
       }
     },
     openLightBox(element, lightboxId) {
-      $(`#${lightboxId}`)
-        .find(".lightboxImage")
-        .attr("src", element.attr("src"));
+      $(`#${lightboxId}`).find(".lightboxImage").attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
@@ -189,7 +184,7 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i;
+          index = i + 1;
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
@@ -239,23 +234,17 @@
       if ($(this).hasClass("active-tag")) {
         return;
       }
-      $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(".nav-link").removeClass("active active-tag");
+      $(this).addClass("active");
 
       var tag = $(this).data("images-toggle");
 
       $(".gallery-item").each(function() {
-        $(this)
-          .parents(".item-column")
-          .hide();
+        $(this).parents(".item-column").hide();
         if (tag === "all") {
-          $(this)
-            .parents(".item-column")
-            .show(300);
+          $(this).parents(".item-column").show(300);
         } else if ($(this).data("gallery-tag") === tag) {
-          $(this)
-            .parents(".item-column")
-            .show(300);
+          $(this).parents(".item-column").show(300);
         }
       });
     }
