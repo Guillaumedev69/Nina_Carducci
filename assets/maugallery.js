@@ -68,7 +68,10 @@
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {
       if (
-        !element.children().first().hasClass("row")
+        !element
+          .children()
+          .first()
+          .hasClass("row")
       ) {
         element.append('<div class="gallery-items-row row"></div>');
       }
@@ -111,7 +114,9 @@
       }
     },
     openLightBox(element, lightboxId) {
-      $(`#${lightboxId}`).find(".lightboxImage").attr("src", element.attr("src"));
+      $(`#${lightboxId}`)
+        .find(".lightboxImage")
+        .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
@@ -145,7 +150,7 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i-1 ;
         }
       });
       next =
@@ -184,7 +189,7 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i + 1;
+          index = i+1;
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
@@ -234,8 +239,8 @@
       if ($(this).hasClass("active-tag")) {
         return;
       }
-      $(".nav-link").removeClass("active active-tag");
-      $(this).addClass("active");
+      $(".active-tag").removeClass("active active-tag");
+      $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 
